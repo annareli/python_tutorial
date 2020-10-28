@@ -1,7 +1,6 @@
 # Initialize my data variable, empty list[], dictionary{}
 data = {'date':[], 'time':[], 'tempout':[]}
 
-
 # Read the data file
 filename = "data/wxobs20170821.txt" #path and filename to data
 
@@ -15,7 +14,8 @@ with open(filename, 'r') as datafile:
         split_line = line.split()
         data['date'].append(split_line[0])
         data['time'].append(split_line[1])
-        data['tempout'].append(split_line[2])
+        data['tempout'].append(float(split_line[2]))
+
 
 datafile.close() 
 
