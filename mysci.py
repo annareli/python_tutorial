@@ -1,5 +1,5 @@
 # Create a column dictionary - column names and column indices to read
-columns = {'date':0, 'time':1, 'tempout':2}
+columns = {'date':0, 'time':1, 'tempout':2, 'windspeed':7}
 
 # Data types for each column (only if non-string)
 types ={'tempout': float}
@@ -15,8 +15,9 @@ filename = "data/wxobs20170821.txt" #path and filename to data
 with open(filename, 'r') as datafile:
     # read the first three lines (header of file)
     for _ in range(3):
-        datafile.readline()
-    
+        headerline = datafile.readline()
+        print(headerline)
+
     # read and parse the rest of the file
     for line in datafile:
         split_line = line.split()
